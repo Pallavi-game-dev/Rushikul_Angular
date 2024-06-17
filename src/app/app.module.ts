@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { RoleModule } from './role/role.module';
 import { EmployeeModule } from './role/employee/employee.module';
-import { MaterialModule } from './material/material.module';
-import { HeaderComponent } from './shared/header/header.component';
+import { CommonSharedModule } from './commonShared/commonShared.module';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -20,8 +22,10 @@ import { HeaderComponent } from './shared/header/header.component';
     AuthModule,
     RoleModule,
     EmployeeModule,
-    MaterialModule,
-    BrowserAnimationsModule
+
+    BrowserAnimationsModule,
+    CommonSharedModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
