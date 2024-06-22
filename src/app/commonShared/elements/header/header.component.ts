@@ -67,32 +67,32 @@ export class HeaderComponent implements OnInit {
 
       {
         title: 'Directors',
-        url: '/directors',
+        url: '/employee/directors',
         icon: 'fa-solid fa-user',
         active: false,
       },
       {
         title: 'Customer',
-        url: '/customer',
+        url: '/employee/customer',
         icon: 'fas fa-tasks',
         active: false,
       },
       {
         title: 'Agent',
-        url: '/Agents',
+        url: '/employee/agents',
         icon: 'fa-solid fa-user',
         active: false,
       },
       {
         title: 'Loan',
-        url: '/sales/stock',
+        url: '/employee/loan',
         icon: 'fas fa-share',
         active: false,
 
       },
       {
         title: 'Deposite',
-        url: '/sales/stock',
+        url: '/employee/deposite',
         icon: 'fas fa-share',
         active: false,
 

@@ -28,10 +28,7 @@ export class AuthInterceptor implements HttpInterceptor {
     this.url = this.router.url;
   }
 
-  intercept(
-    req: HttpRequest<any>,
-    next: HttpHandler
-  ): Observable<HttpEvent<any>> {
+  intercept(req: HttpRequest<any>,next: HttpHandler): Observable<HttpEvent<any>> {
     //
 
     if (this.loginService.checkIsLoggin()) {

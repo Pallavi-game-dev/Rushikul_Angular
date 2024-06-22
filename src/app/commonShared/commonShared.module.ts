@@ -5,13 +5,15 @@ import { ButtonComponent } from './elements/button/button.component';
 import { HeaderComponent } from './elements/header/header.component';
 import { MaterialModule } from '../material/material.module';
 import { RouterModule } from '@angular/router';
-
-
+import { AgGridModule } from 'ag-grid-angular';
+import 'ag-grid-community';
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    AgGridModule
+
   ],
   declarations: [
     ButtonComponent,
@@ -19,7 +21,8 @@ import { RouterModule } from '@angular/router';
   ],
   exports:[
     HeaderComponent,
-    ButtonComponent
+    ButtonComponent,
+    AgGridModule
   ]
 })
 export class CommonSharedModule { }

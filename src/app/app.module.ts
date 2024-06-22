@@ -5,8 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { RoleModule } from './role/role.module';
-import { EmployeeModule } from './role/employee/employee.module';
+
 import { CommonSharedModule } from './commonShared/commonShared.module';
+import { AuthInterceptor } from 'src/http-interceptors/auth-interceptor';
+import { ApiService } from './services/API/api.service';
 
 
 
@@ -21,13 +23,14 @@ import { CommonSharedModule } from './commonShared/commonShared.module';
     AppRoutingModule,
     AuthModule,
     RoleModule,
-    EmployeeModule,
+
 
     BrowserAnimationsModule,
     CommonSharedModule
 
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AuthInterceptor],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

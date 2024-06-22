@@ -1,6 +1,7 @@
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
   loginForm! :FormGroup;
   constructor(
     private fb:FormBuilder,
-    private authService:AuthService
+    private authService:AuthService,
+    private cookieService:CookieService
   ) { }
 
   ngOnInit(): void {
@@ -30,9 +32,16 @@ export class LoginComponent implements OnInit {
         "user":this.loginForm.controls['userId'].value,
         "password":this.loginForm.controls['password'].value,
       }
-      this.authService.login(body).subscribe((res)=>{
+      this.authService.login(body).subscribe((res:any)=>{
         if(res){
           console.log(res);
+          this.cookieService.set(
+            'rushikul_data',
+            JSON.stringify(res.rushikul_data),
+            365,
+            '/'
+          );
+          this.authService.userTypeRedirect()
 
         }
       })
