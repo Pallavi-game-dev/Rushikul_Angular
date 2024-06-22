@@ -7,21 +7,27 @@ import { MaterialModule } from '../material/material.module';
 import { RouterModule } from '@angular/router';
 import { AgGridModule } from 'ag-grid-angular';
 import 'ag-grid-community';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SelectComponent } from './elements/select/select.component';
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
     RouterModule,
-    AgGridModule
+    AgGridModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   declarations: [
     ButtonComponent,
-    HeaderComponent
+    HeaderComponent,
+    SelectComponent
   ],
   exports:[
     HeaderComponent,
     ButtonComponent,
+    SelectComponent,
     AgGridModule
   ]
 })

@@ -9,6 +9,9 @@ import { AgentsComponent } from './Pages/Agents/Agents.component';
 import { DepositesComponent } from './Pages/Deposites/Deposites.component';
 import { LoanComponent } from './Pages/Loan/Loan.component';
 import { CommonSharedModule } from 'src/app/commonShared/commonShared.module';
+import { AddCustomerComponent } from './Pages/Customer/add-customer/add-customer.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from 'src/app/material/material.module';
 
 
 
@@ -19,12 +22,15 @@ import { CommonSharedModule } from 'src/app/commonShared/commonShared.module';
     DirectorsComponent,
     AgentsComponent,
     DepositesComponent,
-    LoanComponent
+    LoanComponent,
+    AddCustomerComponent
   ],
   imports: [
     CommonModule,
     EmployeeRoutingModule,
-    CommonSharedModule
+    CommonSharedModule,
+    ReactiveFormsModule,
+    MaterialModule
   ]
 })
 export class EmployeeModule { }
